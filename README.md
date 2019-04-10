@@ -67,4 +67,7 @@ Ben speculates that defining "functional dependency" in a schema is probably cru
 * Do algebraic data types embed in to categorical relational databases?
 * Would any of the categorical relational database people be interested in collaborating?
 * My suspicion is that the "hard" thing might be finding all the necessary research. I'm hopeful that an actual implementation might be a moderate but achievable side project for a small group, particularly if building on top of stuff that exists (eg, sqlite, http, etc).
+* Can we collect together pointers to relevant papers?
+* Would more bits of vision be useful? And links to similar ideas in other places?
+
 
