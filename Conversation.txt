@@ -1,0 +1,166 @@
+
+# A copy paste of conversation on Twitter
+
+Pavel Bažant
+ Hi Benjohn! In your recent tweets, you mention that you are building a universal structured data substrate to represent programs as well as user data. I'd be thrilled to talk to your about this topic! We could use Skype. There is also another guy who has exactly the same goal, his name is Pavol Privitzer (he is not at Twitter). Perhaps he could join the call. What do you think?
+ Report this message sent 20 hours ago from Pavel Bažant Delete this message sent 20 hours ago from Pavel Bažant
+20h 20 hours ago
+ Benjohn Barnes
+ Hi — I’m not sure I can offer a lot, but sure.
+  Delete this message sent 20 hours ago from Benjohn Barnes
+20h 20 hours ago
+Sent
+ 
+ Pavel Bažant
+ We came to conclusions very similar to yours. I think that some kind of universal versioned structured data substrate will one day change computing at an unprecedented scale. Unfortunately, very very few programmers understand this. Just in case, my Skype name is icher.bechiber , I am in the UTC+1 zone (Prague). In any case, it is always good to see that more and more people are seeing these things :-)
+ Report this message sent 18 hours ago from Pavel Bažant Delete this message sent 18 hours ago from Pavel Bažant
+18h 18 hours ago
+ Benjohn Barnes
+ :-) Yeah – it is great to see it's not a completely unique suggestion! … I think this is probably what the semantic web was hoping to be, but I feel like it's probably failed. It feels like there should be a really simple set of core ideas around schema and updates, and then tools built on that. I don't feel semantic web has that concrete set of core ideas – but I could be wrong.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Benjohn Barnes
+ I'll be visiting Czech Republic next week, but we're not in Prague – my wife's heralds from Moravia, so we visit quite often. I'm definitely happy to talk, sorry if I didn't sound enthusiastic. I'm just not sure if I can actually contribute much that isn't obvious :-)
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+So – the thing that I feel is probably crucially important is that an automatic merge can be synthesised from a schema. The automatic merge should be able to merge non conflicting changes without intervention. In the case of conflicts, it should be able to provide the context needed for either user assisted resolution, or for an automated choice.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+ Benjohn Barnes
+ I'm fairly sure that changes can't be expected to have a total order – independent work seems to require this. So changes must have a partial ordering.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Benjohn Barnes
+ I suspect that it will be necessary for this system to be largely relational.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Benjohn Barnes
+ I also suspect that functional dependency is highly important to establishing where automatic merge is possible.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Benjohn Barnes
+ At the other end of the spectrum, the "deliverable" I'd like to see would be something analogous to SQLite. A library that software can link to that provides a versioned relational data store, querying and provides distribution protocols. But I'd hope that the various subsystems are well defined by open protocols so that arbitrary bits can be used / replaced as desired. the library would hopefully get plenty of use, but it would also be a reference implementation of its underlying and more important principles.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Benjohn Barnes
+ One of my working assumptions is that it might not be all that important to be able to map between different schema. I think a great deal of progress can be made without this facility, because I suspect people would move towards shared schema. I can also see it might be a nice facility to have, if it is cheaply achievable. So – basically, if it's easy to also get, then that's great – but I feel like it would be easy to be distracted by it too.
+ Delete this message sent 17 hours ago from Benjohn Barnes
+17h 17 hours ago
+Sent
+ 
+ Pavel Bažant
+ Interesting. I believe that all code should be stored in a database. At some point, the new infrastructure could be bootstrapped. As a result, only legacy code would be stored as a bunch of text files. New code would be stored in a model with an appropriate schema. The other guy (Pavol Privitzer) even wants to make such data substrate sufficiently performant to make it viable to store all runtime application state using the substrate. Recurring themes like versioning, merging, undo/redo, serialisation/deserialisation, object naming/object identity separation, collaborative editing and state synchronisation, generic data browsing, easy application state inspection would all be solved by the clever choice of the common data substrate/infrastructure. One more thing the runtime incarnation of the substrate should be capable of is automatic dependency tracking. This way, all derived data (including the whole UI) are automatically updated whenever the essential state of the application changes. Reactivity could be built into the substrate.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Pavel Bažant
+ All this could be accomplished using a relatively simple set of principles. Such system (with tools and everything) could be built by a couple of people in let's say five years? The really hard problem is how to create a bridge between the new and old technology to make the transition viable.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Pavel Bažant
+ Most people will not believe that this is possible until they see it.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Pavel Bažant
+ There are many examples of beautiful, non-mainstream but fully functioning systems, that "didn't make it". Smalltalk. Symbolics Genera. Microsoft's Singularity and Midori. 90 % of the problem is designing the gradual transition in a viable way (also in an economical sense). I am glad there exist people who at least have the vision and clearly see what is possible :-)
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Benjohn Barnes
+ Yes – I agree with all this :-) So, in particular, I think all code should live in a database, and said database should have all of the properties that you mention. Said database would also be super useful for, as far as I can see, the overwhelming majority of all user data, and humans as a whole should reasonably expect that all their application tooling has this at its baisis.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+16h 16 hours ago
+Sent
+ 
+ Benjohn Barnes
+ I used to hold that automatic change propagation should also be something that such a system should support. I am now ambivalent on this, and it's something I don't think I can strongly resolve either way. I suspect it _could_ be a great idea, but I also feel like it might be a step too far currently and could preclude great solutions to a step before it. Very strongly agree that this is also something that's almost happened, and that it doesn't seem like a huge undertaking to build.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+16h 16 hours ago
+Sent
+ 
+ Benjohn Barnes
+ This is why I that the SQLite like module would be a really good first step. If it works as well as I feel it ought to work, then I almost can't see how it could fail to quickly gain traction. It would initially just be a better database that lets a developer easily have their apps data store synchronise across devices. But it smoothly becomes a means for backup, a means for sharing and collaborations. Then it becomes a means for versioning. And then, quite smoothly, it allows applications to isolate from their datastore and to become simply a "view" over a ubiquitous datastore. At this point, it should be entirely apparent to the community that the appropriate way to build tooling for coding is to use this datastore. So, I feel constructing this first piece might provide great leverage of effort – provided that it _can_ be constructed and _is_ as useful as I imagine.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+16h 16 hours ago
+Sent
+ 
+ Benjohn Barnes
+ … Im all the commercial work I've done that has any extensive user data, a _huge_ quantity of the development effort has gone in to a crappy, bespoke, limited, data store with broken limited sync, horrible bolted on sharing semantics, some kind of server backup, etc. In all these cases I've gone looking for a tool that "just does" all of this essential work. There are a few things that kind of do some of it. Couch DB have a mobile client, for example. But these are document stores and make a "feature" of having little or no schema.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+16h 16 hours ago
+Sent
+ 
+ Pavel Bažant
+ I like this bootstrap process as you envision it.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+I feel that the schema is essential for achieving automatic merging, and automatic merging is essential for distributed work, and versioning / undo of ones own work.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+So I don't think document stores as they exist are sufficient.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+ Benjohn Barnes
+ :-) Yeah – maybe I'm missing step 2 of 3 :-) But it feels like a thing that could take off, if it was available.
+ Delete this message sent 16 hours ago from Benjohn Barnes
+16h 16 hours ago
+Sent
+ 
+I tend to categorise data representations as the following hierarchy:
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+ Pavel Bažant
+ 0: bits in a flat local address space
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+1: some kind of notation (a stream of symbols)
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+2: some kind of trees
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+ Pavel Bažant
+ 3: some kind of tree with *first class links* or, equivalently, an object graph.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Pavel Bažant
+ Links in text-based (=text files) and naive tree-based (=JSON, various document stores) are non-existent.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+At best, they are implicitly defined by the rules of the specific language/schema. In other words, links are not generic and generic tools cannot "see" them. You need an infinite variety of specialise tools to deduce the link structure.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+Names are abused to implement such implicit links.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+ Pavel Bažant
+ Renaming is then impossible without refactoring the whole universe.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Pavel Bažant
+ Only level 3 sidesteps these problems by acknowledging that links are a generic concept that is first-class in the data substrate.
+ Report this message sent 16 hours ago from Pavel Bažant Delete this message sent 16 hours ago from Pavel Bažant
+16h 16 hours ago
+ Benjohn Barnes
+ *nods* Yes – agree.
+ Delete this message sent 15 hours ago from Benjohn Barnes
+15h 15 hours ago
+Sent
+ 
+ Benjohn Barnes
+ … Another topic I think is really relevant here and that I've been looking for research and results in is mapping of algebraic data types (which seem a good match to program expression) in to a relational setting. I've not had much luck finding anything here at all, though.
+ Delete this message sent 15 hours ago from Benjohn Barnes
+15h 15 hours ago
+Sent
+ 
+ Benjohn Barnes
+ Oh Datomic is worth a look at, but it doesn't support merging and is centralised. It also, as far as I know, requires attributes to exist on entities, and I do not think this is necessarily a good model. I think attributes are functional dependencies of a key of some kind, but it may not be appropriate for those keys to be unique entities.
+  Delete this message sent 15 hours ago from Benjohn Barnes
+15h 15 hours ago
+Sent
+ 
+ Pavel Bažant
+ Yeah. The devil is in the detail.
+ Report this message sent 15 hours ago from Pavel Bažant Delete this message sent 15 hours ago from Pavel Bažant
