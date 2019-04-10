@@ -53,12 +53,15 @@ With distributed and "network partitioned" work, changes are concurrent and only
 
 Ben speculates that defining "functional dependency" in a schema is probably crucially important to supporting automatic merge.
 
-# Stuff that might be useful
+# Stuff that might be useful or interesting
 
 * There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
-* [Projectional Editors](https://martinfowler.com/bliki/ProjectionalEditing.html)
-* [That MS thing like projectional editing]() – can't find link yet
-
+* [Projectional Editor](https://martinfowler.com/bliki/ProjectionalEditing.html)
+* [Intentional programming](https://en.wikipedia.org/wiki/Intentional_programming)
+* [FoNC – fundamentals of new computing](https://www.quora.com/Why-isnt-Alan-Kays-FoNC-Fundamentals-of-New-Computing-project-more-discussed-or-replicated)
+* [Jetbrains MSP](https://www.jetbrains.com/mps/)
+* [BOXER – A RECONSTRUCTIBLE COMPUTATIONAL MEDIUM](https://web.media.mit.edu/~mres/papers/boxer.pdf)
+* [Genera OS](https://en.wikipedia.org/wiki/Genera_(operating_system))
 # Suggestions to move forward
 
 * Can we find a kernel in here that we agree forms a useful and necessary step towards having software stored in a database? Personally, it's actually my secondary goal – I'm somewhat more interested in user ownership of their data, and I think the envisaged database is central to this. I think it's so desirable for software for similar reasons its so desirable for all user data.

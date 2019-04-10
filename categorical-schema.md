@@ -8,3 +8,7 @@ The domain of an Entity / Attribute should support variant typing (also sum type
 
 Does extending the allowable variants (eg, during a schema change) present difficulties?
 
+Are datatype declarations needed as a distinct thing from attributes? They are domains. Can a datatype just be an attribute without any links? 
+
+
+Generics and type classes?
