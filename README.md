@@ -53,7 +53,7 @@ With distributed and "network partitioned" work, changes are concurrent and only
 
 Ben speculates that defining "functional dependency" in a schema is probably crucially important to supporting automatic merge.
 
-# Stuff that might be useful or interesting
+# Related / Interesting Stuff
 
 * There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
 * [Projectional Editor](https://martinfowler.com/bliki/ProjectionalEditing.html)
