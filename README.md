@@ -30,14 +30,22 @@ If such a library existed and gained traction, it seems like it might bootstrap 
 
 The technology, and standards in such a library would hopefully provide a reference implementation of approaches that could then be widely used. Eg, having a schema for data becomes useful in all sorts of tools, such as an automated CRUD scaffolding of mutable views over the data. If it has a one (or more) transport layers, then the standardisation allows for friendly network cache.
 
-# Is relational right?
+# Is relational appropriate?
 
-I feel a system like this should probably be something similar to a relational model:
+I feel a system like this should probably be something _similar_ to a relational model:
 
 * Data should probably not be purely treelike. Trees favour a particular factoring of data that may not be appropriate. A relational approach allows for any desired structure to be queried out.
 * Links should probably be implicit rather than explicit. An implicit link allows novel links in to data that hadn't been anticipated.
 
 [Codd's Turing award paper](https://pdfs.semanticscholar.org/d206/89e9acfdb34326d21bd3ac339d9966cefae3.pdf) on what he was trying to do is inspiring here. In particular: "2. Motivation"
+
+# Programming languages
+
+Many programming languages are expressions representable as an abstract syntax tree. We should be able to represent programs like this, but I don't think tree based expressions are the only form programs might take. I suspect they are prevalent largely because programs are widely stored in text, and expressions and AST are a great formalism for text based programs.
+
+Expressions aren't ideal in some respects, even where currently used. An example is when we'd prefer set like semantics to ordered semantics. For example, the functions in a text file are ordered. This is problematic for merging if they are moved. While the writen order may provide useful information, there's no particular reason to insist on a _single_ canonical function order. 
+
+Language notations could also radically depart from expressions. Eg, [String Diagrams]() are much closer to a DAG, rather than textual expressions. 
 
 # Merging
 
@@ -48,6 +56,9 @@ Ben speculates that defining "functional dependency" in a schema is probably cru
 # Stuff that might be useful
 
 There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
+
+[Projectional Editors]()
+[That MS thing like projectional editing]()
 
 # Suggestions to move forward
 
