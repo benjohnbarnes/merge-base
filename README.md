@@ -45,7 +45,7 @@ Many programming languages are expressions representable as an abstract syntax t
 
 Expressions aren't ideal in some respects, even where currently used. An example is when we'd prefer set like semantics to ordered semantics. For example, the functions in a text file are ordered. This is problematic for merging if they are moved. While the writen order may provide useful information, there's no particular reason to insist on a _single_ canonical function order. 
 
-Language notations could also radically depart from expressions. Eg, [String Diagrams]() are much closer to a DAG, rather than textual expressions. 
+Language notations could also radically depart from expressions. Eg, [String Diagrams](http://chalkdustmagazine.com/features/linear-algebra-diagrams/) are much closer to a DAG and [might be better](https://graphicallinearalgebra.net/2017/04/24/why-string-diagrams/).
 
 # Merging
 
@@ -55,10 +55,9 @@ Ben speculates that defining "functional dependency" in a schema is probably cru
 
 # Stuff that might be useful
 
-There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
-
-[Projectional Editors]()
-[That MS thing like projectional editing]()
+* There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
+* [Projectional Editors](https://martinfowler.com/bliki/ProjectionalEditing.html)
+* [That MS thing like projectional editing]()
 
 # Suggestions to move forward
 
@@ -67,3 +66,5 @@ There are ideas around [category theoretic databases](http://math.mit.edu/~dspiv
 * Is it reasonable to claim that expression based languages are semantically an algebraic data type?
 * Do algebraic data types embed in to categorical relational databases?
 * Would any of the categorical relational database people be interested in collaborating?
+* My suspicion is that the "hard" thing might be finding all the necessary research. I'm hopeful that an actual implementation might be a moderate but achievable side project for a small group, particularly if building on top of stuff that exists (eg, sqlite, http, etc).
+
