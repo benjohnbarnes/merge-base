@@ -57,7 +57,7 @@ Ben speculates that defining "functional dependency" in a schema is probably cru
 
 * There are ideas around [category theoretic databases](http://math.mit.edu/~dspivak/informatics/talks/CTDBIntroductoryTalk). I suspect these might be useful. 
 * [Projectional Editors](https://martinfowler.com/bliki/ProjectionalEditing.html)
-* [That MS thing like projectional editing]()
+* [That MS thing like projectional editing]() – can't find link yet
 
 # Suggestions to move forward
 
