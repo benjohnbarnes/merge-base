@@ -13,9 +13,9 @@ It should be normal for user data to be retained in a store which is:
 * Linkable
 * Extensible
 
-Our manifesto is that users should expect all of their data to exist in this form. Data should not be siloed to applications, but shared among them, with applications providing query, view, and edit facilities. 
+Computer users should expect all of their data to exist in this form. Data should not be siloed to applications, but shared among them, with applications providing query, view, and edit facilities. 
 
-In particular, software should be stored in this form. Software tooling should be able to grow organically and provide new joins between user data. As an example, an IDE; a code review system (like github); a bug tracker; an academic paper on an algorithm; and some user chat between engineers, should all be sharing the same data. Affordances, the views and mutations of data available, should be uniform across these tools.
+In particular, software should be stored in this form. Software tooling should be able to grow organically and provide new joins between user data. As an example, an IDE; a code review system (like github); a bug tracker; an academic paper on an algorithm; and some user chat between developers, should all be sharing the same data. Affordances, the views and mutations of data available, should be uniform across these tools.
 
 This project is an attempt to make this happen.
 
