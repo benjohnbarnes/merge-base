@@ -5,18 +5,7 @@
 import Foundation
 
 
-protocol SiteType {
-    associatedtype Table: TableType
-    associatedtype List: ListType
-    
-    var rootTable: Table {get}
-    
-    func createTable() -> Table
-    func createList() -> List
-}
-
-
-enum Node<Site: SiteType>: Hashable {
+enum Node: Hashable {
     case null
     case bool(Bool)
     case number(Double)
@@ -25,25 +14,42 @@ enum Node<Site: SiteType>: Hashable {
     case dictionary([Node: Node])
     case array([Node])
     
-    case table(Site.Table)
-    case list(Site.List)
+    case table(Table)
 }
 
-protocol TableType: Hashable {
-    associatedtype Site: SiteType where Site.Table == Self
-    
-    var keys: Set<Node<Site>> {get}
-    
-    subscript(_: Node<Site>) -> Node<Site>? {get set}
+protocol SiteType {
+    var rootTable: Table {get}
 }
 
-protocol ListType: Hashable {
-    associatedtype Site: SiteType where Site.List == Self
+protocol TableAccessing {
+    func keys(_: TableId) -> Set<Node>
+    func set(table: TableId, key: Node, value: Node?)
+    func get(table: TableId, key: Node) -> Node?
+}
+
+struct Table: Hashable {
+    let id: TableId
+    let backing: TableAccessing
+
+    var keys: Set<Node> {
+        return backing.keys(id)
+    }
     
-    var count: Int {get}
+    subscript(_ key: Node) -> Node? {
+        get {
+            return backing.get(table: id, key: key)
+        }
+        set {
+            backing.set(table: id, key: key, value: newValue)
+        }
+    }
     
-    subscript(_: Int) -> Node<Site> {get set}
+    static func == (lhs: Table, rhs: Table) -> Bool {
+        return lhs.id == rhs.id
+    }
     
-    func delete(_ : Int)
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 

@@ -11,8 +11,12 @@
 		9CC6278D22D3501000335A73 /* MergebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6278C22D3501000335A73 /* MergebaseTests.swift */; };
 		9CC6278F22D3501000335A73 /* Mergebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC6278122D3501000335A73 /* Mergebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC6279922D3505800335A73 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6279822D3505800335A73 /* Site.swift */; };
-		9CC6279B22D4A5D700335A73 /* StubSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6279A22D4A5D700335A73 /* StubSite.swift */; };
 		9CC627A022D4CB4A00335A73 /* RealSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6279F22D4CB4A00335A73 /* RealSite.swift */; };
+		9CC627A222D4E38A00335A73 /* TableInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627A122D4E38A00335A73 /* TableInternal.swift */; };
+		9CC627A422D577CD00335A73 /* LWWTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627A322D577CD00335A73 /* LWWTable.swift */; };
+		9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627A522D57BA400335A73 /* AnyLWWTableListener.swift */; };
+		9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627A722D582CF00335A73 /* AnyTableServer.swift */; };
+		9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627E422D74E0200335A73 /* AnyLWWClockListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +37,12 @@
 		9CC6278C22D3501000335A73 /* MergebaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergebaseTests.swift; sourceTree = "<group>"; };
 		9CC6278E22D3501000335A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC6279822D3505800335A73 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
-		9CC6279A22D4A5D700335A73 /* StubSite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubSite.swift; sourceTree = "<group>"; };
 		9CC6279F22D4CB4A00335A73 /* RealSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealSite.swift; path = Mergebase/RealSite.swift; sourceTree = SOURCE_ROOT; };
+		9CC627A122D4E38A00335A73 /* TableInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInternal.swift; sourceTree = "<group>"; };
+		9CC627A322D577CD00335A73 /* LWWTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWWTable.swift; sourceTree = "<group>"; };
+		9CC627A522D57BA400335A73 /* AnyLWWTableListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLWWTableListener.swift; sourceTree = "<group>"; };
+		9CC627A722D582CF00335A73 /* AnyTableServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableServer.swift; sourceTree = "<group>"; };
+		9CC627E422D74E0200335A73 /* AnyLWWClockListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLWWClockListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +88,8 @@
 				9CC6278122D3501000335A73 /* Mergebase.h */,
 				9CC6278222D3501000335A73 /* Info.plist */,
 				9CC6279822D3505800335A73 /* Site.swift */,
-				9CC6279A22D4A5D700335A73 /* StubSite.swift */,
 				9CC6279E22D4CB2400335A73 /* Implementation */,
+				9CC627E322D74C6900335A73 /* LWWTable */,
 			);
 			path = Mergebase;
 			sourceTree = "<group>";
@@ -99,8 +107,20 @@
 			isa = PBXGroup;
 			children = (
 				9CC6279F22D4CB4A00335A73 /* RealSite.swift */,
+				9CC627A122D4E38A00335A73 /* TableInternal.swift */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		9CC627E322D74C6900335A73 /* LWWTable */ = {
+			isa = PBXGroup;
+			children = (
+				9CC627A322D577CD00335A73 /* LWWTable.swift */,
+				9CC627A522D57BA400335A73 /* AnyLWWTableListener.swift */,
+				9CC627E422D74E0200335A73 /* AnyLWWClockListener.swift */,
+				9CC627A722D582CF00335A73 /* AnyTableServer.swift */,
+			);
+			path = LWWTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A022D4CB4A00335A73 /* RealSite.swift in Sources */,
 				9CC6279922D3505800335A73 /* Site.swift in Sources */,
-				9CC6279B22D4A5D700335A73 /* StubSite.swift in Sources */,
+				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
+				9CC627A222D4E38A00335A73 /* TableInternal.swift in Sources */,
+				9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */,
+				9CC627A422D577CD00335A73 /* LWWTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
