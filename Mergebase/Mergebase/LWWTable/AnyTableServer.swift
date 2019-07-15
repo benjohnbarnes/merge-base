@@ -4,6 +4,9 @@
 
 import Foundation
 
+// Protocol to for wrappers around things that implements table functionality.
+
+
 protocol TableServing {
     associatedtype Key: Hashable
     associatedtype Value

@@ -43,6 +43,8 @@
 		9CC627A522D57BA400335A73 /* AnyLWWTableListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLWWTableListener.swift; sourceTree = "<group>"; };
 		9CC627A722D582CF00335A73 /* AnyTableServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableServer.swift; sourceTree = "<group>"; };
 		9CC627E422D74E0200335A73 /* AnyLWWClockListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLWWClockListener.swift; sourceTree = "<group>"; };
+		9CC627E622D8485400335A73 /* Synchronisation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Synchronisation.md; sourceTree = "<group>"; };
+		9CC627E722D8871400335A73 /* CommitBased.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CommitBased.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,8 @@
 		9CC6278022D3501000335A73 /* Mergebase */ = {
 			isa = PBXGroup;
 			children = (
+				9CC627E622D8485400335A73 /* Synchronisation.md */,
+				9CC627E722D8871400335A73 /* CommitBased.md */,
 				9CC6278122D3501000335A73 /* Mergebase.h */,
 				9CC6278222D3501000335A73 /* Info.plist */,
 				9CC6279822D3505800335A73 /* Site.swift */,
