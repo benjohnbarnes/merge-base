@@ -10,3 +10,4 @@ extension Dictionary: Arrow {
         return self
     }
 }
+

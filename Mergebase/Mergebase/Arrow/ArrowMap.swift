@@ -7,7 +7,15 @@ import Swift
 
 extension Arrow {
 
-    func map<Value2>(_ t: @escaping (Value) -> Value2) -> ArrowMap<Self, Value2> {
+    func mapKey<U>(_ t: @escaping (Key) -> U) -> ArrowMap<Self, U> {
+        return mapKeyValue { key, _ in t(key)}
+    }
+    
+    func mapValue<U>(_ t: @escaping (Value) -> U) -> ArrowMap<Self, U> {
+        return mapKeyValue { _, value in t(value)}
+    }
+
+    func mapKeyValue<U>(_ t: @escaping (Key, Value) -> U) -> ArrowMap<Self, U> {
         return ArrowMap(underlying: self, t: t)
     }
 }
@@ -15,10 +23,13 @@ extension Arrow {
 struct ArrowMap<Underlying: Arrow, Value>: Arrow {
     
     func records() -> [Underlying.Key : Value] {
-        return underlying.records().mapValues(t)
+        return Dictionary(uniqueKeysWithValues: underlying.records().map {
+            keyValue in
+            return (keyValue.key, t(keyValue.key, keyValue.value))
+        })
     }
-
+    
     fileprivate let underlying: Underlying
-    fileprivate let t: (Underlying.Value) -> Value
+    fileprivate let t: (Underlying.Key, Underlying.Value) -> Value
 }
 
