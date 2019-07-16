@@ -1,8 +1,4 @@
 //
-//  MergebaseTests.swift
-//  MergebaseTests
-//
-//  Created by Benjohn on 08/07/2019.
 //  Copyright © 2019 splendid-things. All rights reserved.
 //
 
@@ -11,24 +7,27 @@ import XCTest
 
 class MergebaseTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    enum Person {
+        case ben
+        case misa
+        case robin
+        case tobi
+        case emily
+        case eli
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    
+    let peopleNames: [Person: String] = [
+        .ben: "Benjohn",
+        .misa: "Michaela",
+        .robin: "Robin",
+        .tobi: "Tobiash",
+        .emily: "Emily",
+        .eli: "Eliash"
+    ]
+    
+    
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let longNames = peopleNames.intersection(peopleNames.map{ $0.count }.whereValue({$0>=7}))
+        XCTAssertEqual(longNames.records().count, 3)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

@@ -4,23 +4,30 @@
 
 import Swift
 
-func intersection<M1: Arrow, M2: Arrow>(_ m1: M1, _ m2: M2) -> ArrowIntersection2<M1, M2> where M1.Key == M2.Key {
-    return ArrowIntersection2(m1: m1, m2: m2)
+extension Arrow {
+    func intersection<Other: Arrow>(_ other: Other) -> ArrowIntersection2<Self, Other> where Key == Other.Key {
+        return ArrowIntersection2(m1: self, m2: other)
+    }
 }
 
 struct ArrowIntersection2<M1: Arrow, M2: Arrow>: Arrow where M1.Key == M2.Key {
     
-    var keys: Set<Key> {
-        return m1.keys.intersection(m2.keys)
+    func records() -> [Key: Value] {
+        let r1 = m1.records()
+        let r2 = m2.records()
+        
+        let commonKeys = Set(r1.keys).intersection(r2.keys)
+        
+        let keysAndValues = commonKeys.map{
+            key in
+            return (key, Value(v1: r1[key]!, v2: r2[key]!))
+        }
+        
+        return Dictionary(uniqueKeysWithValues: keysAndValues)
     }
-    
-    subscript(key: Key) -> Value? {
-        guard let v1 = m1[key], let v2 = m2[key] else { return nil }
-        return Value(v1: v1, v2: v2)
-    }
-    
-    typealias Key = M1.Key
 
+    typealias Key = M1.Key
+    
     struct Value {
         let v1: M1.Value
         let v2: M2.Value

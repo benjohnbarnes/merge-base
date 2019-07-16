@@ -14,16 +14,9 @@ extension Arrow {
 
 struct ArrowMap<Underlying: Arrow, Value>: Arrow {
     
-    var keys: Set<Underlying.Key> {
-        return underlying.keys
+    func records() -> [Underlying.Key : Value] {
+        return underlying.records().mapValues(t)
     }
-    
-    subscript(key: Underlying.Key) -> Value? {
-        guard let value = underlying[key] else { return nil }
-        return t(value)
-    }
-    
-    typealias Key = Underlying.Key
 
     fileprivate let underlying: Underlying
     fileprivate let t: (Underlying.Value) -> Value

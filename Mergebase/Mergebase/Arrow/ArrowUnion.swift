@@ -10,15 +10,19 @@ func union<M1: Arrow, M2: Arrow>(_ m1: M1, _ m2: M2) -> ArrowUnion2<M1, M2> wher
 
 struct ArrowUnion2<M1: Arrow, M2: Arrow>: Arrow where M1.Key == M2.Key {
     
-    var keys: Set<Key> {
-        return m1.keys.union(m2.keys)
-    }
-    
-    subscript(key: Key) -> Value? {
-        let v1 = m1[key]
-        let v2 = m2[key]
-        guard v1 != nil || v2 != nil else { return nil }
-        return Value(v1: v1, v2: v2)
+    func records() -> [Key : Value] {
+        let r1 = m1.records()
+        let r2 = m2.records()
+        
+        let unionKeys = Set(r1.keys).union(r2.keys)
+        
+        let keysAndValues = unionKeys.map{
+            key in
+            return (key, Value(v1: r1[key], v2: r2[key]))
+        }
+        
+        return Dictionary(uniqueKeysWithValues: keysAndValues)
+
     }
     
     typealias Key = M1.Key
