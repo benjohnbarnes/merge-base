@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol WritableMorphism: Morphism {
+protocol WritableArrow: Arrow {
     subscript(_ key: Key) -> Value? {get set}
 }
 

@@ -4,13 +4,13 @@
 
 import Swift
 
-extension Morphism {
-    func select(keysHaving predicate: @escaping (Key) -> Bool) -> MorphismKeySelect<Self> {
-        return MorphismKeySelect(underlying: self, predicate: predicate)
+extension Arrow {
+    func select(keysHaving predicate: @escaping (Key) -> Bool) -> ArrowKeySelect<Self> {
+        return ArrowKeySelect(underlying: self, predicate: predicate)
     }
 }
 
-struct MorphismKeySelect<Underlying: Morphism>: Morphism {
+struct ArrowKeySelect<Underlying: Arrow>: Arrow {
     
     var keys: Set<Underlying.Key> {
         return underlying.keys.filter(predicate)

@@ -4,11 +4,11 @@
 
 import Swift
 
-func union<M1: Morphism, M2: Morphism>(_ m1: M1, _ m2: M2) -> MorphismUnion2<M1, M2> where M1.Key == M2.Key {
-    return MorphismUnion2(m1: m1, m2: m2)
+func union<M1: Arrow, M2: Arrow>(_ m1: M1, _ m2: M2) -> ArrowUnion2<M1, M2> where M1.Key == M2.Key {
+    return ArrowUnion2(m1: m1, m2: m2)
 }
 
-struct MorphismUnion2<M1: Morphism, M2: Morphism>: Morphism where M1.Key == M2.Key {
+struct ArrowUnion2<M1: Arrow, M2: Arrow>: Arrow where M1.Key == M2.Key {
     
     var keys: Set<Key> {
         return m1.keys.union(m2.keys)

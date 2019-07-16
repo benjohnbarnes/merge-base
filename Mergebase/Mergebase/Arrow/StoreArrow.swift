@@ -4,7 +4,7 @@
 
 import Foundation
 
-class StoreMorphism<Key:Hashable, Value>: Morphism {
+class StoreArrow<Key:Hashable, Value>: Arrow {
 
     var keys: Set<Key> {
         return Set(store.keys)
@@ -14,7 +14,6 @@ class StoreMorphism<Key:Hashable, Value>: Morphism {
         get {
             return store[key]
         }
-        
         set {
             store[key] = newValue
         }

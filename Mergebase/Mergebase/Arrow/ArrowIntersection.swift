@@ -4,11 +4,11 @@
 
 import Swift
 
-func intersection<M1: Morphism, M2: Morphism>(_ m1: M1, _ m2: M2) -> MorphismIntersection2<M1, M2> where M1.Key == M2.Key {
-    return MorphismIntersection2(m1: m1, m2: m2)
+func intersection<M1: Arrow, M2: Arrow>(_ m1: M1, _ m2: M2) -> ArrowIntersection2<M1, M2> where M1.Key == M2.Key {
+    return ArrowIntersection2(m1: m1, m2: m2)
 }
 
-struct MorphismIntersection2<M1: Morphism, M2: Morphism>: Morphism where M1.Key == M2.Key {
+struct ArrowIntersection2<M1: Arrow, M2: Arrow>: Arrow where M1.Key == M2.Key {
     
     var keys: Set<Key> {
         return m1.keys.intersection(m2.keys)

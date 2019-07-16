@@ -5,14 +5,14 @@
 import Swift
 
 
-extension Morphism {
+extension Arrow {
 
-    func map<Value2>(_ t: @escaping (Value) -> Value2) -> MorphismMap<Self, Value2> {
-        return MorphismMap(underlying: self, t: t)
+    func map<Value2>(_ t: @escaping (Value) -> Value2) -> ArrowMap<Self, Value2> {
+        return ArrowMap(underlying: self, t: t)
     }
 }
 
-struct MorphismMap<Underlying: Morphism, Value>: Morphism {
+struct ArrowMap<Underlying: Arrow, Value>: Arrow {
     
     var keys: Set<Underlying.Key> {
         return underlying.keys
