@@ -10,4 +10,3 @@ protocol Arrow {
 
     func records() -> [Key:Value]
 }
-

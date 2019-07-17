@@ -22,6 +22,7 @@
 		9CC627FE22DC6F6900335A73 /* ArrowUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC627FD22DC6F6900335A73 /* ArrowUnion.swift */; };
 		9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283222DD9C0900335A73 /* DictionaryArrow.swift */; };
 		9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283A22DE2DC900335A73 /* TableArrow.swift */; };
+		9CC6283E22DEF04800335A73 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283D22DEF04800335A73 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		9CC627FD22DC6F6900335A73 /* ArrowUnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowUnion.swift; sourceTree = "<group>"; };
 		9CC6283222DD9C0900335A73 /* DictionaryArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryArrow.swift; sourceTree = "<group>"; };
 		9CC6283A22DE2DC900335A73 /* TableArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrow.swift; sourceTree = "<group>"; };
+		9CC6283D22DEF04800335A73 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		9CC6283F22DF5E9C00335A73 /* Node-Based.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Node-Based.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +104,10 @@
 				9CC627E722D8871400335A73 /* CommitBased.md */,
 				9CC6278122D3501000335A73 /* Mergebase.h */,
 				9CC6278222D3501000335A73 /* Info.plist */,
+				9CC6283C22DEF04000335A73 /* Node */,
 				9CC627EE22DC5D6F00335A73 /* Arrow */,
 				9CC627E322D74C6900335A73 /* LWWTable */,
+				9CC6283F22DF5E9C00335A73 /* Node-Based.md */,
 			);
 			path = Mergebase;
 			sourceTree = "<group>";
@@ -140,6 +145,14 @@
 				9CC6283A22DE2DC900335A73 /* TableArrow.swift */,
 			);
 			path = Arrow;
+			sourceTree = "<group>";
+		};
+		9CC6283C22DEF04000335A73 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6283D22DEF04800335A73 /* Node.swift */,
+			);
+			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +269,7 @@
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
 				9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */,
+				9CC6283E22DEF04800335A73 /* Node.swift in Sources */,
 				9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */,
 				9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */,
 				9CC627ED22DC5D5C00335A73 /* ArrowComposition.swift in Sources */,
