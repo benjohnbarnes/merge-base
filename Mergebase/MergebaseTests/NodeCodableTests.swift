@@ -38,15 +38,6 @@ class NodeCodingTests: XCTestCase {
     }
     
     private func validateCoding(of node: Node, file: StaticString = #file, line: UInt = #line) {
-        let coder = JSONEncoder()
-        let decoder = JSONDecoder()
-        do {
-            let nodeData = try coder.encode(node)
-            let decodedNode = try decoder.decode(Node.self, from: nodeData)
-            XCTAssertEqual(node, decodedNode, file: file, line: line)
-        }
-        catch {
-            XCTFail(error.localizedDescription, file: file, line: line)
-        }
+        super.validateCoding(of: node, file: file, line: line)
     }
 }

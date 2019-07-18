@@ -33,7 +33,9 @@
 		9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */; };
 		9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */; };
 		9CC6285622E0C27400335A73 /* VariantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285522E0C27400335A73 /* VariantIdentifier.swift */; };
-		9CC6285922E0CA8400335A73 /* NodeCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */; };
+		9CC6285922E0CA8400335A73 /* NodeCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */; };
+		9CC6285B22E0CE0C00335A73 /* NodeTypeCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */; };
+		9CC6285D22E0CF1000335A73 /* CodableValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285C22E0CF1000335A73 /* CodableValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +81,9 @@
 		9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifier.swift; sourceTree = "<group>"; };
 		9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodable.swift; sourceTree = "<group>"; };
 		9CC6285522E0C27400335A73 /* VariantIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantIdentifier.swift; sourceTree = "<group>"; };
-		9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCodingTests.swift; sourceTree = "<group>"; };
+		9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCodableTests.swift; sourceTree = "<group>"; };
+		9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeCodableTests.swift; sourceTree = "<group>"; };
+		9CC6285C22E0CF1000335A73 /* CodableValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +142,11 @@
 		9CC6278B22D3501000335A73 /* MergebaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */,
-				9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */,
 				9CC6278C22D3501000335A73 /* MergebaseTests.swift */,
+				9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */,
+				9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */,
+				9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */,
+				9CC6285C22E0CF1000335A73 /* CodableValidation.swift */,
 				9CC6278E22D3501000335A73 /* Info.plist */,
 			);
 			path = MergebaseTests;
@@ -344,7 +350,9 @@
 			files = (
 				9CC6278D22D3501000335A73 /* MergebaseTests.swift in Sources */,
 				9CC6284122E0770F00335A73 /* NodeConformanceTests.swift in Sources */,
-				9CC6285922E0CA8400335A73 /* NodeCodingTests.swift in Sources */,
+				9CC6285B22E0CE0C00335A73 /* NodeTypeCodableTests.swift in Sources */,
+				9CC6285922E0CA8400335A73 /* NodeCodableTests.swift in Sources */,
+				9CC6285D22E0CF1000335A73 /* CodableValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
