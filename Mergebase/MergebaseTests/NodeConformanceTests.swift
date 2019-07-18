@@ -6,7 +6,7 @@ import XCTest
 
 import Mergebase
 
-class NodeTypeTests: XCTestCase {
+class NodeConformanceTests: XCTestCase {
 
     func test_boolConformanceChecks() {
         let bool = Node.bool(true)

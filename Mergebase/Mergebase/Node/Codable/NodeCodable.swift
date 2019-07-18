@@ -84,9 +84,9 @@ extension Node: Codable {
             try container.encode(Case.tuple, forKey: .case)
             try container.encode(value, forKey: .value)
 
-        case let .variant(`case`, value):
+        case let .variant(variant, value):
             try container.encode(Case.variant, forKey: .case)
-            try container.encode(`case`, forKey: .case)
+            try container.encode(variant, forKey: .variant)
             try container.encode(value, forKey: .value)
 
         case let .set(value):

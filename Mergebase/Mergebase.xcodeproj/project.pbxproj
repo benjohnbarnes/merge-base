@@ -23,7 +23,7 @@
 		9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283222DD9C0900335A73 /* DictionaryArrow.swift */; };
 		9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283A22DE2DC900335A73 /* TableArrow.swift */; };
 		9CC6283E22DEF04800335A73 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283D22DEF04800335A73 /* Node.swift */; };
-		9CC6284122E0770F00335A73 /* NodeTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284022E0770F00335A73 /* NodeTypeTests.swift */; };
+		9CC6284122E0770F00335A73 /* NodeConformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */; };
 		9CC6284522E0909B00335A73 /* CheckAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284422E0909B00335A73 /* CheckAll.swift */; };
 		9CC6284822E0969D00335A73 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284722E0969D00335A73 /* NodeType.swift */; };
 		9CC6284A22E096C800335A73 /* NodeArrowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284922E096C800335A73 /* NodeArrowType.swift */; };
@@ -33,6 +33,7 @@
 		9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */; };
 		9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */; };
 		9CC6285622E0C27400335A73 /* VariantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285522E0C27400335A73 /* VariantIdentifier.swift */; };
+		9CC6285922E0CA8400335A73 /* NodeCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,7 @@
 		9CC6283A22DE2DC900335A73 /* TableArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrow.swift; sourceTree = "<group>"; };
 		9CC6283D22DEF04800335A73 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		9CC6283F22DF5E9C00335A73 /* Node-Based.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Node-Based.md"; sourceTree = "<group>"; };
-		9CC6284022E0770F00335A73 /* NodeTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeTests.swift; sourceTree = "<group>"; };
+		9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeConformanceTests.swift; sourceTree = "<group>"; };
 		9CC6284422E0909B00335A73 /* CheckAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAll.swift; sourceTree = "<group>"; };
 		9CC6284722E0969D00335A73 /* NodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 		9CC6284922E096C800335A73 /* NodeArrowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeArrowType.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifier.swift; sourceTree = "<group>"; };
 		9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodable.swift; sourceTree = "<group>"; };
 		9CC6285522E0C27400335A73 /* VariantIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantIdentifier.swift; sourceTree = "<group>"; };
+		9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCodingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,8 @@
 		9CC6278B22D3501000335A73 /* MergebaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				9CC6284022E0770F00335A73 /* NodeTypeTests.swift */,
+				9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */,
+				9CC6285822E0CA8400335A73 /* NodeCodingTests.swift */,
 				9CC6278C22D3501000335A73 /* MergebaseTests.swift */,
 				9CC6278E22D3501000335A73 /* Info.plist */,
 			);
@@ -340,7 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CC6278D22D3501000335A73 /* MergebaseTests.swift in Sources */,
-				9CC6284122E0770F00335A73 /* NodeTypeTests.swift in Sources */,
+				9CC6284122E0770F00335A73 /* NodeConformanceTests.swift in Sources */,
+				9CC6285922E0CA8400335A73 /* NodeCodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
