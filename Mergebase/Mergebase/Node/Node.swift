@@ -11,6 +11,7 @@ public indirect enum Node: Hashable {
     case number(Double)
     case string(String)
     case data(Data)
+    case type(NodeType)
 
     case tuple([Node])
     case variant(VariantId, Node)
@@ -37,7 +38,8 @@ public extension Node {
             return value.conforms(to: nominal.type)
             
         case (.bool, .bool),
-             (.identifier, .identifier):
+             (.identifier, .identifier),
+             (.type, .type):
             return true
             
         case let (.number(number), .number(range)):

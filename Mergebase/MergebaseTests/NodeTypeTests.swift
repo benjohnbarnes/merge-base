@@ -51,6 +51,12 @@ class NodeTypeTests: XCTestCase {
         checkNonConformance(of: identifier, except: .identifier)
     }
     
+    func test_typeConformanceChecks() {
+        let type = Node.type(.string(nil))
+        checkConformance(of: type, to: .type)
+        checkNonConformance(of: type, except: .type)
+    }
+    
     func test_tupleConformanceChecks() {
         let tuple = Node.tuple([.string("hello"), .number(10)])
         checkConformance(of: tuple, to: .tuple([.string(nil), .number(nil)]))
@@ -122,6 +128,7 @@ class NodeTypeTests: XCTestCase {
             .string(nil),
             .data(nil),
             .identifier,
+            .type,
             .tuple([.string(nil), .string(nil)]),
             .set(.string(nil), nil),
             .set(.string(nil), 0..<2),

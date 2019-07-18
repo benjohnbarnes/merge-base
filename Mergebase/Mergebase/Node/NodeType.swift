@@ -14,6 +14,8 @@ public indirect enum NodeType: Hashable {
 
     case bool
     case identifier
+    case type
+
     case number(Range<Double>?)
     case string(Range<Int>?)
     case data(Range<Int>?)
@@ -31,7 +33,8 @@ extension NodeType {
         switch (self, other) {
         case (_, .anything),
              (.bool, .bool),
-             (.identifier, .identifier):
+             (.identifier, .identifier),
+             (.type, .type):
             return true
             
         case let (.nominal(this), .nominal(that)):

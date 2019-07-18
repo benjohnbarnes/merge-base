@@ -126,9 +126,9 @@
 		9CC6278B22D3501000335A73 /* MergebaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				9CC6284022E0770F00335A73 /* NodeTypeTests.swift */,
 				9CC6278C22D3501000335A73 /* MergebaseTests.swift */,
 				9CC6278E22D3501000335A73 /* Info.plist */,
-				9CC6284022E0770F00335A73 /* NodeTypeTests.swift */,
 			);
 			path = MergebaseTests;
 			sourceTree = "<group>";
