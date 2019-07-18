@@ -32,40 +32,40 @@ public indirect enum NodeType: Hashable {
 public extension Node {
     
     func conforms(to type: NodeType) -> Bool {
-        switch (type, self) {
-        case (.anything, _):
+        switch (self, type) {
+        case (_, .anything):
             return true
             
-        case let (.something(type), _):
-            return conforms(to: type)
+        case let (node, .something(type)):
+            return node.conforms(to: type)
             
         case (.unit, .unit),
              (.bool, .bool),
              (.identifier, .identifier):
             return true
             
-        case let (.number(range), .number(number)):
+        case let (.number(number), .number(range)):
             return range.map { $0 ~= number } ?? true
             
-        case let (.string(lengthLimit), .string(string)):
+        case let (.string(string), .string(lengthLimit)):
             return lengthLimit.map { $0 ~= string.count } ?? true
             
-        case let (.data(lengthLimit), .data(data)):
+        case let (.data(data), .data(lengthLimit)):
             return lengthLimit.map { $0 ~= data.count } ?? true
             
-        case let (.tuple(elementTypes), .tuple(elements)):
+        case let (.tuple(elements), .tuple(elementTypes)):
             guard elementTypes.count == elements.count else { return false }
             return zip(elements, elementTypes).first(where: { $0.conforms(to: $1) == false }) == nil
             
-        case let (.set(elementType, size), .set(elements)):
+        case let (.set(elements), .set(elementType, size)):
             if let size = size, (size ~= elements.count) == false { return false }
             return elements.first(where: { $0.conforms(to: elementType) == false}) == nil
             
-        case let (.array(elementType, size), .array(elements)):
+        case let (.array(elements), .array(elementType, size)):
             if let size = size, (size ~= elements.count) == false { return false }
             return elements.first(where: { $0.conforms(to: elementType) == false}) == nil
             
-        case let (.variant(variants), .variant(variantName, value)):
+        case let (.variant(variantName, value), .variant(variants)):
             guard let variantType = variants[variantName] else { return false }
             return value.conforms(to: variantType)
             
