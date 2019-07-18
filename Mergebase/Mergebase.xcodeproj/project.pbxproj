@@ -37,6 +37,8 @@
 		9CC6285B22E0CE0C00335A73 /* NodeTypeCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */; };
 		9CC6285D22E0CF1000335A73 /* CodableValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285C22E0CF1000335A73 /* CodableValidation.swift */; };
 		9CC6285F22E0D09200335A73 /* NodeIdentifierCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285E22E0D09200335A73 /* NodeIdentifierCodableTests.swift */; };
+		9CC6286122E0D20200335A73 /* NominalIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6286022E0D20200335A73 /* NominalIdentifier.swift */; };
+		9CC6286322E0D2B800335A73 /* NodeTypeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6286222E0D2B800335A73 /* NodeTypeValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeCodableTests.swift; sourceTree = "<group>"; };
 		9CC6285C22E0CF1000335A73 /* CodableValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValidation.swift; sourceTree = "<group>"; };
 		9CC6285E22E0D09200335A73 /* NodeIdentifierCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodableTests.swift; sourceTree = "<group>"; };
+		9CC6286022E0D20200335A73 /* NominalIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalIdentifier.swift; sourceTree = "<group>"; };
+		9CC6286222E0D2B800335A73 /* NodeTypeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				9CC6283D22DEF04800335A73 /* Node.swift */,
+				9CC6286222E0D2B800335A73 /* NodeTypeValidator.swift */,
 				9CC6284722E0969D00335A73 /* NodeType.swift */,
 				9CC6285522E0C27400335A73 /* VariantIdentifier.swift */,
+				9CC6286022E0D20200335A73 /* NominalIdentifier.swift */,
 				9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */,
 				9CC6284B22E0A10200335A73 /* NominalNodeType.swift */,
 				9CC6284922E096C800335A73 /* NodeArrowType.swift */,
@@ -330,9 +336,11 @@
 				9CC6284C22E0A10200335A73 /* NominalNodeType.swift in Sources */,
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
+				9CC6286322E0D2B800335A73 /* NodeTypeValidator.swift in Sources */,
 				9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */,
 				9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */,
 				9CC6283E22DEF04800335A73 /* Node.swift in Sources */,
+				9CC6286122E0D20200335A73 /* NominalIdentifier.swift in Sources */,
 				9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */,
 				9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */,
 				9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */,

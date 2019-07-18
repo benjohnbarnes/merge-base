@@ -22,7 +22,7 @@ public indirect enum Node: Hashable {
 
 //MARK:-
 
-public extension Node {
+extension Node {
     
     func conforms(to type: NodeType) -> Bool {
         switch (self, type) {
