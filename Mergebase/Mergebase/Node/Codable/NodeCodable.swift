@@ -53,7 +53,50 @@ extension Node: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-        fatalError()
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        switch self {
+        case let .bool(value):
+            try container.encode(Case.bool, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .identifier(value):
+            try container.encode(Case.identifier, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .number(value):
+            try container.encode(Case.number, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .string(value):
+            try container.encode(Case.string, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .data(value):
+            try container.encode(Case.data, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .type(value):
+            try container.encode(Case.type, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .tuple(value):
+            try container.encode(Case.tuple, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .variant(`case`, value):
+            try container.encode(Case.variant, forKey: .case)
+            try container.encode(`case`, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .set(value):
+            try container.encode(Case.set, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .array(value):
+            try container.encode(Case.array, forKey: .case)
+            try container.encode(value, forKey: .value)
+        }
     }
 
     private enum Case: String, Codable {

@@ -4,65 +4,14 @@
 
 import Foundation
 
-extension NodeType {
-    
-    func conforms(to other: NodeType) -> Bool {
-        switch (self, other) {
-        case (_, .anything),
-             (.bool, .bool),
-             (.identifier, .identifier),
-             (.type, .type):
-            return true
-            
-        case let (.nominal(this), .nominal(that)):
-            return this == that
-            
-        case let (.number(innerRange), .number(outerRange)):
-            return range(innerRange, isSubRangeOf: outerRange)
-            
-        case let (.string(innerRange), .string(outerRange)),
-             let (.data(innerRange), .data(outerRange)):
-            return range(innerRange, isSubRangeOf: outerRange)
-            
-        case let (.tuple(innerTypes), .tuple(outerTypes)):
-            guard innerTypes.count == outerTypes.count else { return false }
-            return zip(innerTypes, outerTypes).checkAll(pass: { $0.0.conforms(to: $0.1) })
-            
-        case let (.set(innerType, innerRange), .set(outerType, outerRange)),
-             let (.array(innerType, innerRange), .array(outerType, outerRange)):
-            guard range(innerRange, isSubRangeOf: outerRange) else { return false }
-            return innerType.conforms(to: outerType)
-            
-        case let (.variant(innerCases), .variant(outerCases)):
-            return innerCases.checkAll(pass: {
-                innerCaseAndType in
-                guard let outerType = outerCases[innerCaseAndType.key] else { return false }
-                return innerCaseAndType.value.conforms(to: outerType)
-            })
-            
-        default:
-            return false
-        }
-    }
-}
-
-private func range<T>(_ innerRange: Range<T>?, isSubRangeOf outerRange: Range<T>?) -> Bool {
-    if let outerRange = outerRange {
-        guard let innerRange = innerRange else { return false}
-        return outerRange ~= innerRange
-    }
-    else {
-        return true
-    }
-}
 
 extension NodeType: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        func decodeValue<T: Decodable>() throws -> T {
-            return try container.decode(T.self, forKey: .value)
+        func decodeDetail<T: Decodable>() throws -> T {
+            return try container.decode(T.self, forKey: .detail)
         }
         
         func decodeRange<R: Decodable>() throws -> R {
@@ -73,25 +22,96 @@ extension NodeType: Codable {
         
         switch kind {
             
-        case .anything: self = .anything
-        case .nominal: self = .nominal(try decodeValue())
-        case .bool: self = .bool
-        case .identifier: self = .identifier
-        case .type: self = .type
-        case .number: self = .number(try decodeValue())
-        case .string: self = .string(try decodeValue())
-        case .data: self = .data(try decodeValue())
-        case .tuple: self = .tuple(try decodeValue())
-        case .variant: self = .variant(try decodeValue())
-        case .set: self = .set(try decodeValue(), try decodeRange())
-        case .array: self = .array(try decodeValue(), try decodeRange())
+        case .anything:
+            self = .anything
+            
+        case .nominal:
+            self = .nominal(try decodeDetail())
+            
+        case .bool:
+            self = .bool
+            
+        case .identifier:
+            self = .identifier
+            
+        case .type:
+            self = .type
+            
+        case .number:
+            self = .number(try decodeRange())
+            
+        case .string:
+            self = .string(try decodeRange())
+            
+        case .data:
+            self = .data(try decodeRange())
+            
+        case .tuple:
+            self = .tuple(try decodeDetail())
+            
+        case .variant:
+            self = .variant(try decodeDetail())
+            
+        case .set:
+            self = .set(try decodeDetail(), try decodeRange())
+            
+        case .array:
+            self = .array(try decodeDetail(), try decodeRange())
         }
     }
     
     public func encode(to encoder: Encoder) throws {
-        fatalError()
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        switch self {
+        case .anything:
+            try container.encode(Case.anything, forKey: .case)
+
+        case let .nominal(detail):
+            try container.encode(Case.nominal, forKey: .case)
+            try container.encode(detail, forKey: .detail)
+
+        case .bool:
+            try container.encode(Case.bool, forKey: .case)
+
+        case .identifier:
+            try container.encode(Case.identifier, forKey: .case)
+
+        case .type:
+            try container.encode(Case.type, forKey: .case)
+
+        case let .number(range):
+            try container.encode(Case.number, forKey: .case)
+            try container.encode(range, forKey: .range)
+
+        case let .string(range):
+            try container.encode(Case.string, forKey: .case)
+            try container.encode(range, forKey: .range)
+
+        case let .data(range):
+            try container.encode(Case.data, forKey: .case)
+            try container.encode(range, forKey: .range)
+
+        case let .tuple(detail):
+            try container.encode(Case.tuple, forKey: .case)
+            try container.encode(detail, forKey: .detail)
+
+        case let .variant(detail):
+            try container.encode(Case.variant, forKey: .case)
+            try container.encode(detail, forKey: .detail)
+
+        case let .set(detail, range):
+            try container.encode(Case.set, forKey: .case)
+            try container.encode(detail, forKey: .detail)
+            try container.encode(range, forKey: .range)
+
+        case let .array(detail, range):
+            try container.encode(Case.array, forKey: .case)
+            try container.encode(detail, forKey: .detail)
+            try container.encode(range, forKey: .range)
+        }
     }
-    
+        
     private enum Case: String, Codable {
         case anything = "any"
         case nominal = "nom"
@@ -109,7 +129,7 @@ extension NodeType: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case `case` = "c"
-        case value = "v"
+        case detail = "d"
         case range = "r"
     }
 }

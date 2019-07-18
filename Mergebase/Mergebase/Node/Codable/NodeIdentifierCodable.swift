@@ -23,7 +23,22 @@ extension NodeIdentifier: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-        fatalError()
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        switch self {
+        case let .uuid(value):
+            try container.encode(Case.uuid, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .string(value):
+            try container.encode(Case.string, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        case let .url(value):
+            try container.encode(Case.url, forKey: .case)
+            try container.encode(value, forKey: .value)
+
+        }
     }
     
     private enum Case: String, Codable {
