@@ -113,16 +113,14 @@ class NodeTypeTests: XCTestCase {
 
     //MARK:-
     
-    private func checkConformance(of node: Node, to type: NodeType, file: StaticString = #file, line: UInt = #line) {
+    private func checkConformance(of node: Node, to type: StructuralNodeType, file: StaticString = #file, line: UInt = #line) {
         XCTAssert(node.conforms(to: .anything))
-        XCTAssert(node.conforms(to: .something(.anything)))
         XCTAssert(node.conforms(to: type))
-        XCTAssert(node.conforms(to: .something(type)))
     }
     
-    private func checkNonConformance(of node: Node, except excludedType: NodeType?, file: StaticString = #file, line: UInt = #line) {
+    private func checkNonConformance(of node: Node, except excludedType: StructuralNodeType?, file: StaticString = #file, line: UInt = #line) {
         
-        let types: [NodeType] = [
+        let types: [StructuralNodeType] = [
             .unit,
             .bool,
             .number(nil),

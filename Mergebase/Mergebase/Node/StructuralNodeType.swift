@@ -4,41 +4,36 @@
 
 import Foundation
 
-public indirect enum NodeType: Hashable {
+public indirect enum StructuralNodeType: Hashable {
     // This is basically a type variable. An extension would be for the variables in a type to be identified, and they
     // would then need to correctly unify for types to match. Think that just `anything` is probably sufficient for
     // now, though.
     case anything
-    
-    // The "something" case needs to be enforced on the container of the type. Given a Node, you can
-    // only see if it can be a match. To guarantee a match its necessary to check NodeType.
-    case something(NodeType)
-    
-    case unit
-    
+
+    case unit    
     case bool
     case identifier
     case number(Range<Double>?)
     case string(Range<Int>?)
     case data(Range<Int>?)
     
-    case tuple([NodeType])
-    case set(NodeType, Range<Int>?)
-    case array(NodeType, Range<Int>?)
+    case tuple([StructuralNodeType])
+    case set(StructuralNodeType, Range<Int>?)
+    case array(StructuralNodeType, Range<Int>?)
     
-    case variant([VariantName: NodeType])
+    case variant([VariantId: StructuralNodeType])
 }
 
-extension NodeType {
+extension StructuralNodeType {
     
-    func conforms(to other: NodeType) -> Bool {
+    func conforms(to other: StructuralNodeType) -> Bool {
         switch (self, other) {
         case (_, .anything),
              (.unit, .unit),
              (.bool, .bool),
              (.identifier, .identifier):
             return true
-            
+
         case let (.number(innerRange), .number(outerRange)):
             return range(innerRange, isSubRangeOf: outerRange)
 
