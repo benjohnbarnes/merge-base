@@ -1,26 +1,26 @@
-# Morph Base
+# Arrow Base
 
-I'm reviewing this on the 15/7/19 after writing last night. I've just realised what I've been thinking about seems to be a database where attributes are morphisms equipped with a set defining the domain elements where the morphism exists.
+I'm reviewing this on the 15/7/19 after writing last night. I've just realised what I've been thinking about seems to be a database where attributes are arrows equipped with a set defining the domain elements where the arrows exists.
 
-I think a morphism like this is **closed** in that if two are attached, you end up with a similar morphism from a key to an attribute with a domain set showing where it is defined. In this sense it composes. Queries are the same kinds of thing as the stored tables.
+I think an arrows like this is **closed** in that if two are attached, you end up with a similar arrow from a key to an attribute with a domain set showing where it is defined. In this sense it composes. Queries are the same kinds of thing as the stored tables.
 
-**Projection** is a morphism with a total function. A projection can be applied before or after a stored morphism, or any other morphism. If a projection is a bijection there will be no "data loss" when it is attached to another morphism at either the front or back and it can be thought of as a **rename**.
+**Projection** is an arrow with a total function. A projection can be applied before or after a stored arrow, or any other arrow. If a projection is a bijection there will be no "data loss" when it is attached to another arrow at either the front or back and it can be thought of as a **rename**.
 
-**Selection** is an identity morphism along with a predicate that selects the inputs (or outputs) to keep.
+**Selection** is an identity arrow along with a predicate that selects the inputs (or outputs) to keep.
 
-**Natural join** of two morphisms is function composition, possibly along with some mechanism to kind of collect up more stuff in the attribute domain.
+**Natural join** of two arrows is function composition, possibly along with some mechanism to kind of collect up more stuff in the attribute domain.
 
 **Cartesian product** seems to be the function product?
 
-**Aggregation** It seems fine for keys or values to be sets. Aggregations can can be expressed as some kind of higher order operation on a morphism that describes the bucket in to which keys should add their value.
+**Aggregation** It seems fine for keys or values to be sets. Aggregations can can be expressed as some kind of higher order operation on an arrow that describes the bucket in to which keys should add their value.
 
 Think **transitive closure** can be expressed with some kind of higher order function on keys?
 
-Morphisms here are (being morphisms), **profunctors**. Their value type maps covariantly, and their key type maps contravariantly. Perhaps its easier to just think of combining them together in a pipeline, though?
+Arrows here are (being arrows), **profunctors**. Their value type maps covariantly, and their key type maps contravariantly. Perhaps it's easier to just think of combining them together in a pipeline, though?
 
-Suspect indexes might also be describable as a morphism too.
+Suspect indexes might also be describable as an arrow too.
 
-Maybe a nice feature – probably works out to allow a further decorator on a morphism to be an ordering on the key to be used for display?
+Maybe a nice feature – probably works out to allow a further decorator on an arrow to be an ordering on the key to be used for display?
 
 
 # From last night
