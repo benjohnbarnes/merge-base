@@ -120,9 +120,10 @@ class NodeConformanceTests: XCTestCase {
     private func checkConformance(of node: Node, to type: NodeType, file: StaticString = #file, line: UInt = #line) {
         XCTAssert(sut.validate(node: node, conformsTo: .anything), file: file, line: line)
         XCTAssert(sut.validate(node: node, conformsTo: type), file: file, line: line)
-        
-        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: .anything))), file: file, line: line)
-        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: type))), file: file, line: line)
+  
+        XCTFail(file: file, line: line)
+//        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: .anything))), file: file, line: line)
+//        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: type))), file: file, line: line)
     }
     
     private func checkNonConformance(of node: Node, except excludedType: NodeType?, file: StaticString = #file, line: UInt = #line) {

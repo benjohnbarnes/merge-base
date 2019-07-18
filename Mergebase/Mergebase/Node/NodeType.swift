@@ -10,7 +10,7 @@ public indirect enum NodeType: Hashable {
     // now, though.
     case anything
     
-    case nominal(NominalNodeType)
+    case nominal(NominalIdentifier)
 
     case bool
     case identifier

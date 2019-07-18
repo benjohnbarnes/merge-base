@@ -32,7 +32,7 @@ class NodeTypeCodableTests: XCTestCase {
         validateCoding(of: .number(nil))
         validateCoding(of: .number(100..<200))
         
-        validateCoding(of: .nominal(NominalNodeType(type: .string(nil))))
+//        validateCoding(of: .nominal(NominalIdentifier(type: .string(nil))))
         
         validateCoding(of: .variant([:]))
         validateCoding(of: .variant([VariantIdentifier(): .bool, VariantIdentifier(): .string(nil)]))
