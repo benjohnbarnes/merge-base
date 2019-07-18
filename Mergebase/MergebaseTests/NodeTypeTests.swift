@@ -46,7 +46,7 @@ class NodeTypeTests: XCTestCase {
     }
     
     func test_identifierConformanceChecks() {
-        let identifier = Node.identifier(Unique())
+        let identifier = Node.identifier(NodeIdentifier())
         checkConformance(of: identifier, to: .identifier)
         checkNonConformance(of: identifier, except: .identifier)
     }
@@ -99,15 +99,18 @@ class NodeTypeTests: XCTestCase {
     }
     
     func test_variantConformanceChecks() {
-        let variant = Node.variant(.string("left"), .number(10))
-        checkConformance(of: variant, to: .variant([.string("left"): .number(nil), .string("right"): .number(nil)]))
+        let left = VariantIdentifier()
+        let right = VariantIdentifier()
+        
+        let variant = Node.variant(left, .number(10))
+        checkConformance(of: variant, to: .variant([left: .number(nil), right: .number(nil)]))
         checkNonConformance(of: variant, except: nil)
         
-        XCTAssertTrue(variant.conforms(to: .variant([.string("left"): .number(nil)])))
+        XCTAssertTrue(variant.conforms(to: .variant([left: .number(nil)])))
 
         XCTAssertFalse(variant.conforms(to: .variant([:])))
-        XCTAssertFalse(variant.conforms(to: .variant([.string("right"): .number(nil)])))
-        XCTAssertFalse(variant.conforms(to: .variant([.string("left"): .number(100..<101)])))
+        XCTAssertFalse(variant.conforms(to: .variant([right: .number(nil)])))
+        XCTAssertFalse(variant.conforms(to: .variant([left: .number(100..<101)])))
     }
 
     //MARK:-

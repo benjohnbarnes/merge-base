@@ -32,6 +32,7 @@
 		9CC6285022E0B9AE00335A73 /* NodeTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */; };
 		9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */; };
 		9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */; };
+		9CC6285622E0C27400335A73 /* VariantIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285522E0C27400335A73 /* VariantIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeCodable.swift; sourceTree = "<group>"; };
 		9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifier.swift; sourceTree = "<group>"; };
 		9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodable.swift; sourceTree = "<group>"; };
+		9CC6285522E0C27400335A73 /* VariantIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +174,11 @@
 			children = (
 				9CC6283D22DEF04800335A73 /* Node.swift */,
 				9CC6284722E0969D00335A73 /* NodeType.swift */,
+				9CC6285522E0C27400335A73 /* VariantIdentifier.swift */,
 				9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */,
 				9CC6284B22E0A10200335A73 /* NominalNodeType.swift */,
 				9CC6284922E096C800335A73 /* NodeArrowType.swift */,
-				9CC6284D22E0B99A00335A73 /* NodeCodable.swift */,
-				9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */,
-				9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */,
+				9CC6285722E0C3A400335A73 /* Codable */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -188,6 +189,16 @@
 				9CC6284422E0909B00335A73 /* CheckAll.swift */,
 			);
 			path = Useful;
+			sourceTree = "<group>";
+		};
+		9CC6285722E0C3A400335A73 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6284D22E0B99A00335A73 /* NodeCodable.swift */,
+				9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */,
+				9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */,
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				9CC6284A22E096C800335A73 /* NodeArrowType.swift in Sources */,
 				9CC6284822E0969D00335A73 /* NodeType.swift in Sources */,
 				9CC627E922DC52BF00335A73 /* Arrow.swift in Sources */,
+				9CC6285622E0C27400335A73 /* VariantIdentifier.swift in Sources */,
 				9CC6284C22E0A10200335A73 /* NominalNodeType.swift in Sources */,
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,

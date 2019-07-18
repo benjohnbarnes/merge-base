@@ -6,7 +6,7 @@ import Foundation
 
 public indirect enum Node: Hashable {
     case bool(Bool)
-    case identifier(Unique)
+    case identifier(NodeIdentifier)
 
     case number(Double)
     case string(String)
@@ -14,18 +14,12 @@ public indirect enum Node: Hashable {
     case type(NodeType)
 
     case tuple([Node])
-    case variant(VariantId, Node)
+    case variant(VariantIdentifier, Node)
 
     case set(Set<Node>)
     case array([Node])
 }
 
-public struct Unique: Codable, Hashable {
-    public init() {}
-    private let identifier = UUID()
-}
-
-public typealias VariantId = NodeIdentifier
 
 public extension Node {
     

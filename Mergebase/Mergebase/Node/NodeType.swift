@@ -21,7 +21,7 @@ public indirect enum NodeType: Hashable {
     case data(Range<Int>?)
     
     case tuple([NodeType])
-    case variant([VariantId: NodeType])
+    case variant([VariantIdentifier: NodeType])
 
     case set(NodeType, Range<Int>?)
     case array(NodeType, Range<Int>?)
