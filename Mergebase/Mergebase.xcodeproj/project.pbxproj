@@ -25,6 +25,7 @@
 		9CC6283E22DEF04800335A73 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283D22DEF04800335A73 /* Node.swift */; };
 		9CC6284122E0770F00335A73 /* NodeTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284022E0770F00335A73 /* NodeTypeTests.swift */; };
 		9CC6284322E088F300335A73 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284222E088F300335A73 /* NodeType.swift */; };
+		9CC6284522E0909B00335A73 /* CheckAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284422E0909B00335A73 /* CheckAll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		9CC6283F22DF5E9C00335A73 /* Node-Based.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Node-Based.md"; sourceTree = "<group>"; };
 		9CC6284022E0770F00335A73 /* NodeTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeTests.swift; sourceTree = "<group>"; };
 		9CC6284222E088F300335A73 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
+		9CC6284422E0909B00335A73 /* CheckAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC6278022D3501000335A73 /* Mergebase */,
+				9CC6284622E090B400335A73 /* Useful */,
 				9CC6278B22D3501000335A73 /* MergebaseTests */,
 				9CC6277F22D3501000335A73 /* Products */,
 			);
@@ -159,6 +162,14 @@
 				9CC6284222E088F300335A73 /* NodeType.swift */,
 			);
 			path = Node;
+			sourceTree = "<group>";
+		};
+		9CC6284622E090B400335A73 /* Useful */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6284422E0909B00335A73 /* CheckAll.swift */,
+			);
+			path = Useful;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				9CC6283E22DEF04800335A73 /* Node.swift in Sources */,
 				9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */,
 				9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */,
+				9CC6284522E0909B00335A73 /* CheckAll.swift in Sources */,
 				9CC627ED22DC5D5C00335A73 /* ArrowComposition.swift in Sources */,
 				9CC627F422DC602F00335A73 /* ArrowMap.swift in Sources */,
 				9CC627A422D577CD00335A73 /* LWWTable.swift in Sources */,

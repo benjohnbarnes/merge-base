@@ -17,10 +17,10 @@ public indirect enum NodeType: Hashable {
     case unit
     
     case bool
+    case identifier
     case number(Range<Double>?)
     case string(Range<Int>?)
     case data(Range<Int>?)
-    case identifier
     
     case tuple([NodeType])
     case set(NodeType, Range<Int>?)
@@ -29,49 +29,53 @@ public indirect enum NodeType: Hashable {
     case variant([VariantName: NodeType])
 }
 
-public extension Node {
+extension NodeType {
     
-    func conforms(to type: NodeType) -> Bool {
-        switch (self, type) {
-        case (_, .anything):
-            return true
-            
-        case let (node, .something(type)):
-            return node.conforms(to: type)
-            
-        case (.unit, .unit),
+    func conforms(to other: NodeType) -> Bool {
+        switch (self, other) {
+        case (_, .anything),
+             (.unit, .unit),
              (.bool, .bool),
              (.identifier, .identifier):
             return true
             
-        case let (.number(number), .number(range)):
-            return range.map { $0 ~= number } ?? true
+        case let (.number(innerRange), .number(outerRange)):
+            return range(innerRange, isSubRangeOf: outerRange)
+
+        case let (.string(innerRange), .string(outerRange)),
+             let (.data(innerRange), .data(outerRange)):
+            return range(innerRange, isSubRangeOf: outerRange)
+
+        case let (.tuple(innerTypes), .tuple(outerTypes)):
+            guard innerTypes.count == outerTypes.count else { return false }
+            return zip(innerTypes, outerTypes).checkAll(pass: { $0.0.conforms(to: $0.1) })
             
-        case let (.string(string), .string(lengthLimit)):
-            return lengthLimit.map { $0 ~= string.count } ?? true
+        case let (.set(innerType, innerRange), .set(outerType, outerRange)),
+             let (.array(innerType, innerRange), .array(outerType, outerRange)):
+            guard range(innerRange, isSubRangeOf: outerRange) else { return false }
+            return innerType.conforms(to: outerType)
             
-        case let (.data(data), .data(lengthLimit)):
-            return lengthLimit.map { $0 ~= data.count } ?? true
-            
-        case let (.tuple(elements), .tuple(elementTypes)):
-            guard elementTypes.count == elements.count else { return false }
-            return zip(elements, elementTypes).first(where: { $0.conforms(to: $1) == false }) == nil
-            
-        case let (.set(elements), .set(elementType, size)):
-            if let size = size, (size ~= elements.count) == false { return false }
-            return elements.first(where: { $0.conforms(to: elementType) == false}) == nil
-            
-        case let (.array(elements), .array(elementType, size)):
-            if let size = size, (size ~= elements.count) == false { return false }
-            return elements.first(where: { $0.conforms(to: elementType) == false}) == nil
-            
-        case let (.variant(variantName, value), .variant(variants)):
-            guard let variantType = variants[variantName] else { return false }
-            return value.conforms(to: variantType)
+        case let (.variant(innerCases), .variant(outerCases)):
+            return innerCases.checkAll(pass: {
+                innerCaseAndType in
+                guard let outerType = outerCases[innerCaseAndType.key] else { return false }
+                return innerCaseAndType.value.conforms(to: outerType)
+                })
             
         default:
             return false
         }
     }
+}
+
+private func range<T>(_ innerRange: Range<T>?, isSubRangeOf outerRange: Range<T>?) -> Bool {
+    if let outerRange = outerRange {
+        guard let innerRange = innerRange else { return false}
+        return outerRange ~= innerRange
+    }
+    else {
+        return true
+    }
+    
 }
 
