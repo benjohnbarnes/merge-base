@@ -4,11 +4,13 @@
 
 import Foundation
 
-public indirect enum StructuralNodeType: Hashable {
+public indirect enum NodeType: Hashable {
     // This is basically a type variable. An extension would be for the variables in a type to be identified, and they
     // would then need to correctly unify for types to match. Think that just `anything` is probably sufficient for
     // now, though.
     case anything
+    
+    case nominal(NominalNodeType)
 
     case bool
     case identifier
@@ -16,21 +18,41 @@ public indirect enum StructuralNodeType: Hashable {
     case string(Range<Int>?)
     case data(Range<Int>?)
     
-    case tuple([StructuralNodeType])
-    case variant([VariantId: StructuralNodeType])
+    case tuple([NodeType])
+    case variant([VariantId: NodeType])
 
-    case set(StructuralNodeType, Range<Int>?)
-    case array(StructuralNodeType, Range<Int>?)
+    case set(NodeType, Range<Int>?)
+    case array(NodeType, Range<Int>?)
 }
 
-extension StructuralNodeType {
+public class NominalNodeType: Hashable {
     
-    func conforms(to other: StructuralNodeType) -> Bool {
+    public init(type: NodeType) {
+        self.type = type
+    }
+    
+    public static func == (lhs: NominalNodeType, rhs: NominalNodeType) -> Bool {
+        return lhs === rhs
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        ObjectIdentifier(self).hash(into: &hasher)
+    }
+    
+    let type: NodeType
+}
+
+extension NodeType {
+    
+    func conforms(to other: NodeType) -> Bool {
         switch (self, other) {
         case (_, .anything),
              (.bool, .bool),
              (.identifier, .identifier):
             return true
+            
+        case let (.nominal(this), .nominal(that)):
+            return this == that
 
         case let (.number(innerRange), .number(outerRange)):
             return range(innerRange, isSubRangeOf: outerRange)

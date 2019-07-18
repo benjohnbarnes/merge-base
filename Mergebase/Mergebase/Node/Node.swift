@@ -28,10 +28,13 @@ public typealias VariantId = String
 
 public extension Node {
     
-    func conforms(to type: StructuralNodeType) -> Bool {
+    func conforms(to type: NodeType) -> Bool {
         switch (self, type) {
         case (_, .anything):
             return true
+            
+        case let (value, .nominal(nominal)):
+            return value.conforms(to: nominal.type)
             
         case (.bool, .bool),
              (.identifier, .identifier):

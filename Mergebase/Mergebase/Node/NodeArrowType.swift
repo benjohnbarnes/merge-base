@@ -5,7 +5,7 @@
 import Foundation
 
 public struct NodeArrowType {
-    let keyType: StructuralNodeType
-    let valueType: StructuralNodeType
+    let keyType: NodeType
+    let valueType: NodeType
 }
 
