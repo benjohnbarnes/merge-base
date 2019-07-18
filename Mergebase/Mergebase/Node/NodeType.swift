@@ -25,23 +25,6 @@ public indirect enum NodeType: Hashable {
     case array(NodeType, Range<Int>?)
 }
 
-public class NominalNodeType: Hashable {
-    
-    public init(type: NodeType) {
-        self.type = type
-    }
-    
-    public static func == (lhs: NominalNodeType, rhs: NominalNodeType) -> Bool {
-        return lhs === rhs
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        ObjectIdentifier(self).hash(into: &hasher)
-    }
-    
-    let type: NodeType
-}
-
 extension NodeType {
     
     func conforms(to other: NodeType) -> Bool {

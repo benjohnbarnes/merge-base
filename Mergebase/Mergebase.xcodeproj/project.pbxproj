@@ -27,6 +27,7 @@
 		9CC6284522E0909B00335A73 /* CheckAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284422E0909B00335A73 /* CheckAll.swift */; };
 		9CC6284822E0969D00335A73 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284722E0969D00335A73 /* NodeType.swift */; };
 		9CC6284A22E096C800335A73 /* NodeArrowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284922E096C800335A73 /* NodeArrowType.swift */; };
+		9CC6284C22E0A10200335A73 /* NominalNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284B22E0A10200335A73 /* NominalNodeType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9CC6284422E0909B00335A73 /* CheckAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAll.swift; sourceTree = "<group>"; };
 		9CC6284722E0969D00335A73 /* NodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 		9CC6284922E096C800335A73 /* NodeArrowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeArrowType.swift; sourceTree = "<group>"; };
+		9CC6284B22E0A10200335A73 /* NominalNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalNodeType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				9CC6283D22DEF04800335A73 /* Node.swift */,
 				9CC6284722E0969D00335A73 /* NodeType.swift */,
+				9CC6284B22E0A10200335A73 /* NominalNodeType.swift */,
 				9CC6284922E096C800335A73 /* NodeArrowType.swift */,
 			);
 			path = Node;
@@ -288,6 +291,7 @@
 				9CC6284A22E096C800335A73 /* NodeArrowType.swift in Sources */,
 				9CC6284822E0969D00335A73 /* NodeType.swift in Sources */,
 				9CC627E922DC52BF00335A73 /* Arrow.swift in Sources */,
+				9CC6284C22E0A10200335A73 /* NominalNodeType.swift in Sources */,
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
 				9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */,
