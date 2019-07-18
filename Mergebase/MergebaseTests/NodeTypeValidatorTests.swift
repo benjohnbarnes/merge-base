@@ -6,9 +6,18 @@ import XCTest
 
 import Mergebase
 
-class NodeConformanceTests: XCTestCase {
+class NodeNodeTypeValidatorTests: XCTestCase {
 
-    let sut = NodeTypeValidator()
+    private let nodeTypeGateway = StubNominalTypeGateway()
+    var sut: NodeTypeValidator!
+    
+    override func setUp() {
+        sut = NodeTypeValidator(typeGateway: nodeTypeGateway)
+    }
+    
+    override func tearDown() {
+        sut = nil
+    }
     
     func test_boolConformanceChecks() {
         let bool = Node.bool(true)
@@ -121,9 +130,10 @@ class NodeConformanceTests: XCTestCase {
         XCTAssert(sut.validate(node: node, conformsTo: .anything), file: file, line: line)
         XCTAssert(sut.validate(node: node, conformsTo: type), file: file, line: line)
   
-        XCTFail(file: file, line: line)
-//        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: .anything))), file: file, line: line)
-//        XCTAssert(sut.validate(node: node, conformsTo: .nominal(NominalNodeType(type: type))), file: file, line: line)
+        let newNominalId = NominalIdentifier()
+        nodeTypeGateway.nodeTypes[newNominalId] = type
+        
+        XCTAssert(sut.validate(node: node, conformsTo: .nominal(newNominalId)), file: file, line: line)
     }
     
     private func checkNonConformance(of node: Node, except excludedType: NodeType?, file: StaticString = #file, line: UInt = #line) {
@@ -149,6 +159,11 @@ class NodeConformanceTests: XCTestCase {
     }
 }
 
-private extension Node {
+private class StubNominalTypeGateway: NominalTypeGateway {
     
+    func type(of nominalIdentifier: NominalIdentifier) -> NodeType? {
+        return nodeTypes[nominalIdentifier]
+    }
+    
+    var nodeTypes: [NominalIdentifier: NodeType] = [:]
 }
