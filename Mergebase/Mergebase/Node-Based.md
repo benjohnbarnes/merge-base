@@ -7,3 +7,5 @@ A simpler option is to use a single type of node for keys and value that support
 Types can be described, and Attributes can know the type of their key and value. This allows UI to find which attributes make sense to display for a particular type of key.
 
 Which seems nice. Yeah.
+
+While `Node` itself wouldn't be typed as stored in a table, the client App will probably find it useful to have a `TypedNode` that has a `Node` and a `NodeType` so that it can determine the appropriate properties for a `TypedNode`, and its affodances.

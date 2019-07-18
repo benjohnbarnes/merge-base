@@ -23,6 +23,8 @@
 		9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283222DD9C0900335A73 /* DictionaryArrow.swift */; };
 		9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283A22DE2DC900335A73 /* TableArrow.swift */; };
 		9CC6283E22DEF04800335A73 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6283D22DEF04800335A73 /* Node.swift */; };
+		9CC6284122E0770F00335A73 /* NodeTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284022E0770F00335A73 /* NodeTypeTests.swift */; };
+		9CC6284322E088F300335A73 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284222E088F300335A73 /* NodeType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		9CC6283A22DE2DC900335A73 /* TableArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrow.swift; sourceTree = "<group>"; };
 		9CC6283D22DEF04800335A73 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		9CC6283F22DF5E9C00335A73 /* Node-Based.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Node-Based.md"; sourceTree = "<group>"; };
+		9CC6284022E0770F00335A73 /* NodeTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeTests.swift; sourceTree = "<group>"; };
+		9CC6284222E088F300335A73 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +107,11 @@
 				9CC627E622D8485400335A73 /* Synchronisation.md */,
 				9CC627E722D8871400335A73 /* CommitBased.md */,
 				9CC6278122D3501000335A73 /* Mergebase.h */,
+				9CC6283F22DF5E9C00335A73 /* Node-Based.md */,
 				9CC6278222D3501000335A73 /* Info.plist */,
 				9CC6283C22DEF04000335A73 /* Node */,
 				9CC627EE22DC5D6F00335A73 /* Arrow */,
 				9CC627E322D74C6900335A73 /* LWWTable */,
-				9CC6283F22DF5E9C00335A73 /* Node-Based.md */,
 			);
 			path = Mergebase;
 			sourceTree = "<group>";
@@ -117,6 +121,7 @@
 			children = (
 				9CC6278C22D3501000335A73 /* MergebaseTests.swift */,
 				9CC6278E22D3501000335A73 /* Info.plist */,
+				9CC6284022E0770F00335A73 /* NodeTypeTests.swift */,
 			);
 			path = MergebaseTests;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC6283D22DEF04800335A73 /* Node.swift */,
+				9CC6284222E088F300335A73 /* NodeType.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CC627FC22DC6DDB00335A73 /* ArrowIntersection.swift in Sources */,
+				9CC6284322E088F300335A73 /* NodeType.swift in Sources */,
 				9CC627E922DC52BF00335A73 /* Arrow.swift in Sources */,
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
@@ -285,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CC6278D22D3501000335A73 /* MergebaseTests.swift in Sources */,
+				9CC6284122E0770F00335A73 /* NodeTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

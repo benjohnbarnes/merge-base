@@ -4,18 +4,31 @@
 
 import Foundation
 
-enum Node: Hashable {
+public indirect enum Node: Hashable {
+    case unit
+    
     case bool(Bool)
     case number(Double)
     case string(String)
-    
-    case set(Set<Node>)
-    case tuple([Node])
+    case data(Data)
+    case identifier(Unique)
 
-    case reference(Unique)
+    case tuple([Node])
+    case set(Set<Node>)
+    case array([Node])
+
+    case variant(VariantName, Node)
 }
 
-struct Unique: Hashable {
+public struct Unique: Hashable {
+    public init() {}
     private let identifier = UUID()
+}
+
+public typealias VariantName = String
+
+public struct NodeArrowType {
+    let keyType: NodeType
+    let valueType: NodeType
 }
 
