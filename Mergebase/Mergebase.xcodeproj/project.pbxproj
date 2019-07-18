@@ -28,6 +28,10 @@
 		9CC6284822E0969D00335A73 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284722E0969D00335A73 /* NodeType.swift */; };
 		9CC6284A22E096C800335A73 /* NodeArrowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284922E096C800335A73 /* NodeArrowType.swift */; };
 		9CC6284C22E0A10200335A73 /* NominalNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284B22E0A10200335A73 /* NominalNodeType.swift */; };
+		9CC6284E22E0B99A00335A73 /* NodeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284D22E0B99A00335A73 /* NodeCodable.swift */; };
+		9CC6285022E0B9AE00335A73 /* NodeTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */; };
+		9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */; };
+		9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		9CC6284722E0969D00335A73 /* NodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 		9CC6284922E096C800335A73 /* NodeArrowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeArrowType.swift; sourceTree = "<group>"; };
 		9CC6284B22E0A10200335A73 /* NominalNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalNodeType.swift; sourceTree = "<group>"; };
+		9CC6284D22E0B99A00335A73 /* NodeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCodable.swift; sourceTree = "<group>"; };
+		9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeCodable.swift; sourceTree = "<group>"; };
+		9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifier.swift; sourceTree = "<group>"; };
+		9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +172,12 @@
 			children = (
 				9CC6283D22DEF04800335A73 /* Node.swift */,
 				9CC6284722E0969D00335A73 /* NodeType.swift */,
+				9CC6285122E0B9E700335A73 /* NodeIdentifier.swift */,
 				9CC6284B22E0A10200335A73 /* NominalNodeType.swift */,
 				9CC6284922E096C800335A73 /* NodeArrowType.swift */,
+				9CC6284D22E0B99A00335A73 /* NodeCodable.swift */,
+				9CC6285322E0BB1100335A73 /* NodeIdentifierCodable.swift */,
+				9CC6284F22E0B9AE00335A73 /* NodeTypeCodable.swift */,
 			);
 			path = Node;
 			sourceTree = "<group>";
@@ -295,10 +307,14 @@
 				9CC627E522D74E0200335A73 /* AnyLWWClockListener.swift in Sources */,
 				9CC627A622D57BA400335A73 /* AnyLWWTableListener.swift in Sources */,
 				9CC6283322DD9C0900335A73 /* DictionaryArrow.swift in Sources */,
+				9CC6285222E0B9E700335A73 /* NodeIdentifier.swift in Sources */,
 				9CC6283E22DEF04800335A73 /* Node.swift in Sources */,
 				9CC627A822D582CF00335A73 /* AnyTableServer.swift in Sources */,
 				9CC6283B22DE2DC900335A73 /* TableArrow.swift in Sources */,
+				9CC6285422E0BB1100335A73 /* NodeIdentifierCodable.swift in Sources */,
 				9CC6284522E0909B00335A73 /* CheckAll.swift in Sources */,
+				9CC6285022E0B9AE00335A73 /* NodeTypeCodable.swift in Sources */,
+				9CC6284E22E0B99A00335A73 /* NodeCodable.swift in Sources */,
 				9CC627ED22DC5D5C00335A73 /* ArrowComposition.swift in Sources */,
 				9CC627F422DC602F00335A73 /* ArrowMap.swift in Sources */,
 				9CC627A422D577CD00335A73 /* LWWTable.swift in Sources */,

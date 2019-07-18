@@ -15,7 +15,7 @@ import Foundation
  `NominalNodeId`.
  */
 
-public class NominalNodeType: Hashable {
+public class NominalNodeType: Hashable, Codable {
     
     public init(type: NodeType) {
         self.type = type

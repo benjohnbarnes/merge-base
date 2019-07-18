@@ -20,12 +20,12 @@ public indirect enum Node: Hashable {
     case array([Node])
 }
 
-public struct Unique: Hashable {
+public struct Unique: Codable, Hashable {
     public init() {}
     private let identifier = UUID()
 }
 
-public typealias VariantId = String
+public typealias VariantId = NodeIdentifier
 
 public extension Node {
     
@@ -63,15 +63,13 @@ public extension Node {
             if let size = size, (size ~= elements.count) == false { return false }
             return elements.checkAll(pass: { $0.conforms(to: elementType)})
             
-        case let (.variant(variantName, value), .variant(variants)):
-            guard let variantType = variants[variantName] else { return false }
-            return value.conforms(to: variantType)
+        case let (.variant(`case`, value), .variant(variants)):
+            guard let type = variants[`case`] else { return false }
+            return value.conforms(to: type)
             
         default:
             return false
         }
     }
 }
-
-
 
