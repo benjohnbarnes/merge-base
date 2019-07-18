@@ -53,7 +53,7 @@ extension Node: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-        
+        fatalError()
     }
 
     private enum Case: String, Codable {

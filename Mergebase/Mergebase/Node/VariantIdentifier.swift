@@ -5,7 +5,7 @@
 import Foundation
 
 
-public struct VariantIdentifier: Hashable, Codable {
+public struct VariantIdentifier: Hashable {
     
     public init() {
         identifier = NodeIdentifier()
@@ -18,3 +18,18 @@ public struct VariantIdentifier: Hashable, Codable {
     public let identifier: NodeIdentifier
 }
 
+//MARK:-
+
+extension VariantIdentifier: Codable {
+
+    /*
+     Replace coding to avoid default implementation creating a needless wrapper.
+     */
+    public init(from decoder: Decoder) throws {
+        identifier = try NodeIdentifier(from: decoder)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        try identifier.encode(to: encoder)
+    }
+}
