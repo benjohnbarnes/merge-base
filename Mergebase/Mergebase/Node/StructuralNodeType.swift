@@ -10,7 +10,6 @@ public indirect enum StructuralNodeType: Hashable {
     // now, though.
     case anything
 
-    case unit    
     case bool
     case identifier
     case number(Range<Double>?)
@@ -18,10 +17,10 @@ public indirect enum StructuralNodeType: Hashable {
     case data(Range<Int>?)
     
     case tuple([StructuralNodeType])
+    case variant([VariantId: StructuralNodeType])
+
     case set(StructuralNodeType, Range<Int>?)
     case array(StructuralNodeType, Range<Int>?)
-    
-    case variant([VariantId: StructuralNodeType])
 }
 
 extension StructuralNodeType {
@@ -29,7 +28,6 @@ extension StructuralNodeType {
     func conforms(to other: StructuralNodeType) -> Bool {
         switch (self, other) {
         case (_, .anything),
-             (.unit, .unit),
              (.bool, .bool),
              (.identifier, .identifier):
             return true

@@ -5,8 +5,6 @@
 import Foundation
 
 public indirect enum Node: Hashable {
-    case unit
-    
     case bool(Bool)
     case identifier(Unique)
 
@@ -15,10 +13,10 @@ public indirect enum Node: Hashable {
     case data(Data)
 
     case tuple([Node])
+    case variant(VariantId, Node)
+
     case set(Set<Node>)
     case array([Node])
-
-    case variant(VariantId, Node)
 }
 
 public struct Unique: Hashable {
@@ -35,8 +33,7 @@ public extension Node {
         case (_, .anything):
             return true
             
-        case (.unit, .unit),
-             (.bool, .bool),
+        case (.bool, .bool),
              (.identifier, .identifier):
             return true
             

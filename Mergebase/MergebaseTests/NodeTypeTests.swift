@@ -8,12 +8,6 @@ import Mergebase
 
 class NodeTypeTests: XCTestCase {
 
-    func test_unitConformanceCheck() {
-        let unit = Node.unit
-        checkConformance(of: unit, to: .unit)
-        checkNonConformance(of: unit, except: .unit)
-    }
-    
     func test_boolConformanceChecks() {
         let bool = Node.bool(true)
         checkConformance(of: bool, to: .bool)
@@ -107,7 +101,6 @@ class NodeTypeTests: XCTestCase {
 
         XCTAssertFalse(variant.conforms(to: .variant([:])))
         XCTAssertFalse(variant.conforms(to: .variant(["right": .number(nil)])))
-        XCTAssertFalse(variant.conforms(to: .variant(["left": .unit])))
         XCTAssertFalse(variant.conforms(to: .variant(["left": .number(100..<101)])))
     }
 
@@ -121,7 +114,6 @@ class NodeTypeTests: XCTestCase {
     private func checkNonConformance(of node: Node, except excludedType: StructuralNodeType?, file: StaticString = #file, line: UInt = #line) {
         
         let types: [StructuralNodeType] = [
-            .unit,
             .bool,
             .number(nil),
             .string(nil),
