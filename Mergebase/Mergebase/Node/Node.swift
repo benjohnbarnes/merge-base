@@ -5,17 +5,29 @@
 import Foundation
 
 public indirect enum Node: Hashable {
-    case bool(Bool)
-    case identifier(NodeIdentifier)
 
+    // Scalars
+    //
+    case bool(Bool)
     case number(Double)
     case string(String)
     case data(Data)
-    case type(NodeType)
 
+    // First class Type.
+    //
+    case type(NodeType)
+    
+    // Some identified thing in the system.
+    //
+    case identifier(NodeIdentifier)
+
+    // Product and Sum types.
+    //
     case tuple([Node])
     case variant(VariantIdentifier, Node)
 
+    // Collections.
+    //
     case set(Set<Node>)
     case array([Node])
 }

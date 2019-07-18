@@ -8,21 +8,35 @@ public indirect enum NodeType: Hashable {
     // This is basically a type variable. An extension would be for the variables in a type to be identified, and they
     // would then need to correctly unify for types to match. Think that just `anything` is probably sufficient for
     // now, though.
+    //
     case anything
-    
+
+    // A named rather than structural type – only matches to the named type.
+    //
     case nominal(NominalIdentifier)
 
-    case bool
-    case identifier
+    // A conforming node contains a NodeType to allow for first class values.
+    //
     case type
+    
+    // A conforming Node has `NodeIdentifier` referencing some specific thing.
+    //
+    case identifier
 
+    // Various scalar types – some support constraints on their range / length.
+    //
+    case bool
     case number(Range<Double>?)
     case string(Range<Int>?)
     case data(Range<Int>?)
     
+    // Product type and sum type.
+    //
     case tuple([NodeType])
     case variant([VariantIdentifier: NodeType])
 
+    // Collection types.
+    //
     case set(NodeType, Range<Int>?)
     case array(NodeType, Range<Int>?)
 }
@@ -39,8 +53,8 @@ public extension NodeType {
              (.type, .type):
             return true
             
-        case let (.nominal(this), .nominal(that)):
-            return this == that
+        case let (.nominal(selfId), .nominal(otherId)):
+            return selfId == otherId
             
         case let (.number(innerRange), .number(outerRange)):
             return range(innerRange, isSubRangeOf: outerRange)
