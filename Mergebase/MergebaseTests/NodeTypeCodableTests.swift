@@ -11,7 +11,7 @@ import Mergebase
 
 class NodeTypeCodableTests: XCTestCase {
 
-    func testExample() {
+    func test_NodeType() {
         validateCoding(of: .anything)
 
         validateCoding(of: .bool)

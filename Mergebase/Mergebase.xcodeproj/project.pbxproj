@@ -36,6 +36,7 @@
 		9CC6285922E0CA8400335A73 /* NodeCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */; };
 		9CC6285B22E0CE0C00335A73 /* NodeTypeCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */; };
 		9CC6285D22E0CF1000335A73 /* CodableValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285C22E0CF1000335A73 /* CodableValidation.swift */; };
+		9CC6285F22E0D09200335A73 /* NodeIdentifierCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6285E22E0D09200335A73 /* NodeIdentifierCodableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCodableTests.swift; sourceTree = "<group>"; };
 		9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeCodableTests.swift; sourceTree = "<group>"; };
 		9CC6285C22E0CF1000335A73 /* CodableValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableValidation.swift; sourceTree = "<group>"; };
+		9CC6285E22E0D09200335A73 /* NodeIdentifierCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeIdentifierCodableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				9CC6278C22D3501000335A73 /* MergebaseTests.swift */,
 				9CC6284022E0770F00335A73 /* NodeConformanceTests.swift */,
 				9CC6285822E0CA8400335A73 /* NodeCodableTests.swift */,
+				9CC6285E22E0D09200335A73 /* NodeIdentifierCodableTests.swift */,
 				9CC6285A22E0CE0C00335A73 /* NodeTypeCodableTests.swift */,
 				9CC6285C22E0CF1000335A73 /* CodableValidation.swift */,
 				9CC6278E22D3501000335A73 /* Info.plist */,
@@ -352,6 +355,7 @@
 				9CC6284122E0770F00335A73 /* NodeConformanceTests.swift in Sources */,
 				9CC6285B22E0CE0C00335A73 /* NodeTypeCodableTests.swift in Sources */,
 				9CC6285922E0CA8400335A73 /* NodeCodableTests.swift in Sources */,
+				9CC6285F22E0D09200335A73 /* NodeIdentifierCodableTests.swift in Sources */,
 				9CC6285D22E0CF1000335A73 /* CodableValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
