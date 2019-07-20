@@ -4,9 +4,9 @@ An Updatable is a tuple: `(S, D,  ∅, :, ;,  ⊕)` where:
 
 * `S` is the set / type of possible states. It's the value we actually care about.
 * `D` is the set / type of possible updates. It's the changes that can be made to a value `s ∊ S`.
-* `:` is an operator to apply an update to a state. `s:d⟶t` were `s,t ∊ S` and `d ∊ D`.
-* `∅ ∊ D` is the identity update that such `s:∅⟶s`.
-* `;` is a sequential combiner for change such that `(s:d):e == s(d;e)`. `;` is a monoid with identity element `∅`.
+* `:` is an operator to apply an update to a state. `s:d ⟶ t` were `s,t ∊ S` and `d ∊ D`.
+* `∅ ∊ D` is the identity update that such `s:∅ ⟶ s`.
+* `;` is a sequential combiner for change such that `(s:d):e = s(d;e)`. `;` is a monoid with identity element `∅`.
 * `⊕` is a parallel combiner for change. `⊕` is a commutative monoid, also with an identity element `∅`.
 
 # Counting Updatable.
