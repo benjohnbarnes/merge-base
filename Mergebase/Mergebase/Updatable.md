@@ -11,7 +11,7 @@ An Updatable is a tuple: `(S, D,  ∅, :, ;,  ⊕)` where:
 
 # Counting Updatable.
 
-Defining the tuple `(Z, Z, 0, +, +, +)` provides a counter type that supports up and down counts. Counts can be sequentially and concurrently resolved. Similarly, another number type can be used.
+Defining the tuple `(Z, Z, 0, +, +, +)` provides a counter type that supports up and down counts. Counts can be sequentially and concurrently resolved. Similarly, another number type can be used. More generally, any type that has an operator `+` and an identity element is suitable. So, vectors and fields are good to go.
 
 
 # Any type as an Updatable.
@@ -30,3 +30,4 @@ An unconflicted state is represented `{t}` – a set with caronality 1. Similarl
 * Concurrent changes to the same values `t` and `t`  is represented `{t} ⊕ {t}`, which is `{t} ⋃ {t}` which is `{t}`. This resulting set with cardonality = 1 represents a change of a value in to an unconflicted state. Equally, it represents an unconflicted value.
 * Concurrent changes of `t` and `∅`  is `{t} ⊕ {}`, which is `{t} ⋃ {}` which is `{t}`. This resulting set with cardonality = 1 is a change to an unconflicted state. Equally, it represents an unconflicted value.
 * Concurrent changes of of `∅` and `∅` is `{} ⊕ {}`, which is `{} ⋃ {}` which is `{}`. This resulting set of cardonality = 0 is the null change leaving a state as it is.
+
