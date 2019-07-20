@@ -1,6 +1,6 @@
 #  Commit Based
 
-* A commit based system would have a semi-lattice of commits.
+* A commit based system would have a DAG of commits.
 * Commits would include a hash of the complete system state at that time (and a hash of the system history?).
 * It should be possible for chunks of both state and history to be **faulted** and not locally stored. In such a case its necessary to have a "stand in" for their hash.
 * It is acceptable to delete history, but if this is done globally, it's no longer possible to merge a commit that has becomes orphaned. A commit is orphaned when its meet with known commits is not stored – although can partial information about history be sufficient to allow a merge? 

@@ -5,9 +5,9 @@
 import Foundation
 
 public indirect enum NodeType: Hashable {
-    // This is basically a type variable. An extension would be for the variables in a type to be identified, and they
-    // would then need to correctly unify for types to match. Think that just `anything` is probably sufficient for
-    // now, though.
+    
+    // This is basically a type variable. An extension would be for the variables in a type to be identified. They
+    // would then need to correctly unify for types to match. `anything` is probably sufficient for now, though.
     //
     case anything
 
@@ -35,7 +35,7 @@ public indirect enum NodeType: Hashable {
     case tuple([NodeType])
     case variant([VariantIdentifier: NodeType])
 
-    // Collection types.
+    // Collection types – some support constraints on their length.
     //
     case set(NodeType, Range<Int>?)
     case array(NodeType, Range<Int>?)
